@@ -140,7 +140,7 @@ function Admin() {
 
   const saveEditDoctor = () => {
     axios
-      .put(`https://localhost:44374/api/Doctors/${editDoctorData.doctorId}`, editDoctorData)
+      .put(`https://localhost:44374/api/Doctors/${editDoctorData.doctorid}`, editDoctorData)
       .then((res) => {
         console.log(res);
         fetchDoctors();
