@@ -13,38 +13,34 @@ const Home = () => {
   const additionalCards = [
     {
       image: card1,
-      title: "Convenient learning format",
-      description: "Online learning format with mentorship from industry experts"
+      title: "Empowering Lives through Comprehensive Medicine",
+      description: "Aljo's Care is your partner in health, offering a wide array of comprehensive medical services designed to empower and revitalize your life"
     },
     {
       image: card2,
-      title: "Dedicated career services",
-      description: "Resume & interview preps with industry experts & exclusive job board"
+      title: "Nurturing Health for a Vibrant Tomorrow",
+      description: "Your central hub for nurturing health and well-being. Explore our website to discover a holistic approach to healthcare, where wellness programs, preventive measures, and expert guidance converge to create a vibrant tomorrow"
     },
 
     {
       image: card3,
-      title: "Learn from the best",
-      description: "Award winning faculties in Full Stack domain from top IT background"
+      title: "Accelerating Healing with Precision Medicine",
+      description: " Experience the power of precision medicine at Rapid Recovery, where cutting-edge technologies and personalized treatment plans converge to accelerate healing"
     },
     {
       image: card4,
-      title: "Structured program with dedicated support ",
-      description: "Dedicated program manager to ensure that students make progress and have learning outcomes"
+      title: "Bridging the Gap to Holistic Healthcare",
+      description: "Aljo's Hospital is your bridge to holistic healthcare, connecting you with a network of compassionate physicians, specialized treatments, and integrated therapies. Immerse yourself in our hospital carousel and embark on a transformative healthcare experience"
     },
-    // {
-    //   image: card5,
-    //   title: "Hands on learning",
-    //   description: "Become job-ready by applying what you learn and build real-life projects"
-    // }
   ];
 
   return (
     <div className="program-highlights">
-      <h1 className='MyStyle'> Kick-Start Your Learning Journey </h1>
+      <marquee behavior="scroll" direction="left" scrollamount="10">
+        <h1 className='MyStyle'> FREE Ambulance Service -- 1066 </h1>
+      </marquee>
       <Carousel
         interval={3000}
-        //pauseOnHover={false}
         indicators={true}
         controls={true}
         fade={true}
@@ -57,8 +53,8 @@ const Home = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>Explore our Centres of Clinical Excellence</h3>
-            <p className="lead">Dive into the captivating world of full stack development as you witness the synergy of front-end and back-end technologies</p>
+            <h3>Why Choose Aljo's Healthcare?</h3>
+            <p className="lead">Established in 1983, Aljo's Hospitals has a robust presence across the healthcare ecosystem. From routine wellness & preventive health care to innovative life-saving treatments and diagnostic services</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -68,14 +64,14 @@ const Home = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>The Dynamic Web: Building the Digital Ecosystem</h3>
-            <p className="lead">Amalgamation of diverse programming languages, frameworks, and tools, representing the comprehensive nature of full stack development</p>
+            <h3>Explore our Centres of Clinical Excellence</h3>
+            <p className="lead">Discover a sanctuary of healing and hope, where our dedicated team of medical experts and cutting-edge technology combine to provide unparalleled healthcare services</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <div className="video-wrapper">
             <ReactPlayer
-              url="https://youtu.be/l1EssrLxt7E"
+              url="https://youtu.be/9_2dQBdfcJY"
               className="video"
               width="100%"
               height="100%"
@@ -86,8 +82,8 @@ const Home = () => {
             />
           </div>
           <Carousel.Caption>
-            <h3>Introduction to Web Development</h3>
-            <p className="lead">Watch the video to get a basic idea of web development</p>
+            <h3>Dive into our vast health care system</h3>
+            <p className="lead">Watch the video to get an idea of our health care services</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

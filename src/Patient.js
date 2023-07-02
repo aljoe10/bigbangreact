@@ -111,7 +111,7 @@ function Patient() {
 
   return (
     <div className="Student-container">
-      <h2>Patient Data</h2>
+      <h2 className="header" style={{ textAlign: "center" }}>Patient Records</h2>
       <table className="Student-table">
         <thead>
           <tr>
@@ -169,7 +169,7 @@ function Patient() {
         className="add-form"
         style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}
       >
-        <h4>Add Patient Details</h4>
+        <h4>Create Patient Appointment</h4>
         <div className="form-group">
           <label htmlFor="pname">pname:</label>
           <input
@@ -254,7 +254,7 @@ function Patient() {
             border: "1px solid #ccc",
           }}
         >
-          <h4>Edit Patient</h4>
+          <h4>Edit Patient Appointment Details</h4>
           <div className="form-group">
             <label htmlFor="edit-pname">pname:</label>
             <input

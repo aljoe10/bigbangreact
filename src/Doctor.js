@@ -1,57 +1,54 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function Navbar() {
-  //const isLoggedIn = sessionStorage.getItem("jwttoken") !== null;
-
   return (
     <>
-      {/* {isLoggedIn && ( */}
-        <nav
+      <nav
         className={`navbar navbar-expand-lg navbar-dark bg-dark`}
         style={{
           boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.4)",
         }}
-        >
-          <div className="container">
-            <a className="navbar-brand" href="/">
-              Aljo's Hospitals
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"  
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/Home">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/tech">
-                    Course Overview
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/syllabus">
-                    Course Syllabus
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
+      >
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            Aljo's Hospitals
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/Home">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/specialities">
+                  Specialities
+                </Link>
+              </li>
+              {/* <li className="nav-item">
+                <Link className="nav-link" to="/syllabus">
+                  Course Syllabus
+                </Link>
+              </li> */}
+              {/* <li className="nav-item">
                   <Link className="nav-link" to="/contact">Contact</Link>
                 </li> */}
-                {/* <li className="nav-item">
+              {/* <li className="nav-item">
                   <Link className="nav-link" to="/teacher">
                     Teacher Data
                   </Link>
@@ -61,22 +58,22 @@ function Navbar() {
                     Patient Data
                   </Link>
                 </li> */}
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contact">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
-        </nav>
-      {/* )} */}
+        </div>
+      </nav>
     </>
   );
 }
 
 function Doctor() {
   const [p, setP] = useState([]);
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
     fetchData();
@@ -94,11 +91,33 @@ function Doctor() {
       });
   };
 
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const filteredDoctors =
+    filter === "All" ? p : p.filter((pdata) => pdata.status === filter);
+
   return (
     <div>
       <Navbar />
       <div className="Student-container">
-        <h2>Doctor Data</h2>
+        <h2 className="header" style={{ textAlign: "center" }}>Doctor Records</h2>
+        <div className="filter-container">
+          <label htmlFor="filter" className="filter-label">
+            Filter Doctor Status:
+          </label>
+          <select
+            id="filter"
+            value={filter}
+            onChange={handleFilterChange}
+            className="filter-select"
+          >
+            <option value="All">All</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
         <table className="Student-table">
           <thead>
             <tr>
@@ -111,7 +130,7 @@ function Doctor() {
             </tr>
           </thead>
           <tbody>
-            {p.map((pdata) => (
+            {filteredDoctors.map((pdata) => (
               <tr key={pdata.doctorid}>
                 <td>{pdata.doctorid}</td>
                 <td>{pdata.dname}</td>

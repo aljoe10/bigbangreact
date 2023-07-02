@@ -234,7 +234,7 @@ function Admin() {
   return (
     <div className="Admin-container">
       {/* Doctor section */}
-      <h2>Doctor Data</h2>
+      <h2 className="header" style={{ textAlign: "center" }}>Doctor Records</h2>
       <table className="Student-table">
         <thead>
           <tr>
@@ -303,7 +303,7 @@ function Admin() {
         className="add-form"
         style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}
       >
-        <h4>Add Doctor Details</h4>
+        <h4>Create New Doctor Record</h4>
         <div className="form-group">
           <label htmlFor="dname">dname:</label>
           <input
@@ -377,7 +377,7 @@ function Admin() {
             border: "1px solid #ccc",
           }}
         >
-          <h4>Edit Doctors</h4>
+          <h4>Edit Doctor Records</h4>
           <div className="form-group">
             <label htmlFor="edit-dname">dname:</label>
             <input
@@ -436,7 +436,7 @@ function Admin() {
       )}
       
       {/* Patient section */}
-      <h2>Patient Data</h2>
+      <h2 className="header" style={{ textAlign: "center" }}>Patient Records</h2>
       <table className="Student-table">
         <thead>
           <tr>
@@ -494,7 +494,7 @@ function Admin() {
         className="add-form"
         style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}
       >
-        <h4>Add Patient Details</h4>
+        <h4>Create Patient Appointment</h4>
         <div className="form-group">
           <label htmlFor="pname">pname:</label>
           <input
@@ -579,7 +579,7 @@ function Admin() {
             border: "1px solid #ccc",
           }}
         >
-          <h4>Edit Patient</h4>
+          <h4>Edit Patient Records</h4>
           <div className="form-group">
             <label htmlFor="edit-pname">pname:</label>
             <input

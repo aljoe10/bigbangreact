@@ -55,7 +55,7 @@ const ContactForm = () => {
     <div className="mine">
       {formSubmitted ? (
         <>
-          <p className="mt-4">Your Form is submitted</p>
+          <p className="mt-4">Your Form is submitted!</p>
           <p>Name: {firstName}</p>
           <p>Email: {email}</p>
           <p>Contact: {contact}</p>
@@ -66,7 +66,7 @@ const ContactForm = () => {
       ) : (
         <>
           <div className="work mt-4">
-            <p className="mb-2">How Can We Help You</p>
+            <p className="mb-2">How Can We Help You?</p>
             <p className="greetings">Get In Touch With Us</p>
             <p>Enter Your Info: {buttonClick}</p>
 

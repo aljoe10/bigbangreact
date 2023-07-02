@@ -3,12 +3,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Login } from './login';
+import { Register } from './register';
 import Doctor from './Doctor';
 import Patient from './Patient';
 import Admin from './Admin';
-import { Register } from './register';
-import ContactForm from './contact';
 import Home from './Home';
+import ContactForm from './contact';
+import { NotFound } from './NotFound';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
     <Route exact path="/Doctor" element={<Doctor/>} />
     <Route exact path="/Patient" element={<Patient/>} />
     <Route exact path="/Home" element={<Home/>} />
+    {/* <Route exact path="/specialities" element={<Specialities/>} /> */}
     <Route exact path="/contact" element={<ContactForm/>} />
+    <Route exact path="*" element={<NotFound/>} />
     
     </Routes>
     </Router>
