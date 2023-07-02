@@ -5,25 +5,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 function Navbar() {
-  const isLoggedIn = sessionStorage.getItem("jwttoken") !== null;
+  //const isLoggedIn = sessionStorage.getItem("jwttoken") !== null;
 
   return (
     <>
-      {isLoggedIn && (
+      {/* {isLoggedIn && ( */}
         <nav
-          style={{
-            boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.4)",
-          }}
+        className={`navbar navbar-expand-lg navbar-dark bg-dark`}
+        style={{
+          boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.4)",
+        }}
         >
           <div className="container">
             <a className="navbar-brand" href="/">
-              Aljo's Academy
+              Aljo's Hospitals
             </a>
             <button
               className="navbar-toggler"
               type="button"
               data-toggle="collapse"
-              data-target="#navbarNav"
+              data-target="#navbarNav"  
               aria-controls="navbarNav"
               aria-expanded="false"
               aria-label="Toggle navigation"
@@ -33,8 +34,8 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/highlight">
-                    Program Highlights
+                  <Link className="nav-link" to="/Home">
+                    Home
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -50,7 +51,7 @@ function Navbar() {
                 {/* <li className="nav-item">
                   <Link className="nav-link" to="/contact">Contact</Link>
                 </li> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="/teacher">
                     Teacher Data
                   </Link>
@@ -59,9 +60,9 @@ function Navbar() {
                   <Link className="nav-link" to="/patient">
                     Patient Data
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link" to="/tempnewform">
+                  <Link className="nav-link" to="/contact">
                     Contact
                   </Link>
                 </li>
@@ -69,7 +70,7 @@ function Navbar() {
             </div>
           </div>
         </nav>
-      )}
+      {/* )} */}
     </>
   );
 }

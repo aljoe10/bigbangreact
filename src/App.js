@@ -7,6 +7,8 @@ import Doctor from './Doctor';
 import Patient from './Patient';
 import Admin from './Admin';
 import { Register } from './register';
+import ContactForm from './contact';
+import Home from './Home';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
     <Route exact path="/Admin" element={<Admin/>} />
     <Route exact path="/Doctor" element={<Doctor/>} />
     <Route exact path="/Patient" element={<Patient/>} />
+    <Route exact path="/Home" element={<Home/>} />
+    <Route exact path="/contact" element={<ContactForm/>} />
     
     </Routes>
     </Router>
