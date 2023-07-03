@@ -1,0 +1,22 @@
+#backgroundReg{
+    height: 100vh;
+    width: 100vw;
+    background: url('./assests/img/b2.jpg');
+    overflow: hidden;
+    size: stretch;
+    background-size: 100% 100%;
+}
+
+#registerForm{
+    width: 50%;
+}
+
+#blur{
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

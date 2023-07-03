@@ -223,6 +223,7 @@ function Admin() {
     axios
       .put(`https://localhost:44374/api/Patients/${editPatientData.patientId}`, editPatientData)
       .then((res) => {
+        console.log(res);
         fetchPatients();
         setDisplayEditPatientForm(false);
       })
@@ -277,6 +278,7 @@ function Admin() {
                     backgroundColor: "red",
                     color: "white",
                     width: "80px",
+                    marginRight: "5px",
                   }}
                 >
                   Delete

@@ -91,7 +91,9 @@ const Home = () => {
       <div className="card-container cover">
         {additionalCards.map((card, index) => (
           <div className="card cardAlt" key={index}>
+            <div className="card-image">
             <img src={card.image} alt={card.title} />
+            </div>
             <div className="card-body cardBody">
               <h5 className="card-title cardTitle">{card.title}</h5>
               <p className="card-text cardText">{card.description}</p>

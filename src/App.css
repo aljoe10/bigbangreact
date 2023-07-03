@@ -152,6 +152,22 @@
   font-size: 14px;
 }
 
+.card .card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.2);
+}
+
+/* .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
 .filter-label {
   font-weight: bold;
   margin-right: 5px;

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+import './login.css';
 
 export const Login = () => {
   const [username, setUsername] = useState("");
@@ -110,14 +111,14 @@ export const Login = () => {
   };
 
   return (
-    <div className="row">
-      <div className="offset-lg-3 col-lg-6">
-        <form onSubmit={handleLoginUsingAPI} className="container">
+    <div id = "background">
+      <div id = "blur">
+        <form onSubmit={handleLoginUsingAPI} className="container" id = "loginForm">
           <div className="card login-card">
             <div className="card-header">
               <h2>Login</h2>
             </div>
-            <div className="card-body">
+            <div className="card-body"> 
               <div className="form-group">
                 <label>
                   User Name <span className="errmsg">*</span>
@@ -153,7 +154,7 @@ export const Login = () => {
                   Login
                 </button>
                 <div className="mt-2">
-                <span>New user? </span>
+                <span>Create New Account? </span>
                 <Link className="btn btn-success mt-2" to={"/register"}>
                   Register
                 </Link>
@@ -163,6 +164,6 @@ export const Login = () => {
           </div>
         </form>
       </div>
-    </div>
+      </div>
   );
 };

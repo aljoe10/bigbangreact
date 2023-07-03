@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
+import './register.css';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -83,9 +84,9 @@ export const Register = () => {
   };
 
   return (
-    <div className="row">
-      <div className="offset-lg-3 col-lg-6">
-        <form onSubmit={handleSubmit} className="container">
+    <div id = "backgroundReg">
+      <div id = "blur">
+        <form onSubmit={handleSubmit} className="container" id = "registerForm">
           <div className="card register-card">
             <div className="card-header">
               <h2>Register</h2>

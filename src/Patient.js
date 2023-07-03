@@ -23,6 +23,7 @@ function Patient() {
     bloodType: "",
   });
   const [disp] = useState("none");
+  const [showCreateForm, setShowCreateForm] = useState(false); // New state variable
 
   useEffect(() => {
     fetchData();
@@ -68,12 +69,12 @@ function Patient() {
         console.log(res);
         setAddMessage("Data added successfully!");
         setAddData({
-            pname: "",
-            gender: "",
-            dateOfBirth: "",
-            email: "",
-            phoneNumber: "",
-            bloodType: "",
+          pname: "",
+          gender: "",
+          dateOfBirth: "",
+          email: "",
+          phoneNumber: "",
+          bloodType: "",
         });
         fetchData();
       })
@@ -99,7 +100,10 @@ function Patient() {
 
   const saveEdit = () => {
     axios
-      .put(`https://localhost:44374/api/Patients/${editData.patientid}`, editData)
+      .put(
+        `https://localhost:44374/api/Patients/${editData.patientid}`,
+        editData
+      )
       .then((res) => {
         console.log(res);
         fetchData();
@@ -111,7 +115,9 @@ function Patient() {
 
   return (
     <div className="Student-container">
-      <h2 className="header" style={{ textAlign: "center" }}>Patient Records</h2>
+      <h2 className="header" style={{ textAlign: "center" }}>
+        Patient Records
+      </h2>
       <table className="Student-table">
         <thead>
           <tr>
@@ -167,7 +173,12 @@ function Patient() {
       </table>
       <div
         className="add-form"
-        style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}
+        style={{
+          marginTop: "20px",
+          padding: "10px",
+          border: "1px solid #ccc",
+          display: showCreateForm ? "block" : "none", // Conditionally display the form
+        }}
       >
         <h4>Create Patient Appointment</h4>
         <div className="form-group">
@@ -322,6 +333,13 @@ function Patient() {
           </div>
         </div>
       )}
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={() => setShowCreateForm(!showCreateForm)} // Toggle the display of the form
+      >
+        Create
+      </button>
     </div>
   );
 }
