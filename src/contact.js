@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import './TempNewForm.css';
 import ContactChild from './contactchild';
+import Footer from './Footer';
 
 const ContactForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -52,7 +53,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="mine">
+    <><div className="mine">
       {formSubmitted ? (
         <>
           <p className="mt-4">Your Form is submitted!</p>
@@ -78,8 +79,7 @@ const ContactForm = () => {
                     type="text"
                     placeholder="Name"
                     value={firstName}
-                    onChange={handleChange}
-                  />
+                    onChange={handleChange} />
                 </div>
                 <div className="form-group">
                   <input
@@ -87,8 +87,7 @@ const ContactForm = () => {
                     type="email"
                     placeholder="Email"
                     value={email}
-                    onChange={handleEmailChange}
-                  />
+                    onChange={handleEmailChange} />
                 </div>
                 <div className="form-group">
                   <input
@@ -96,17 +95,16 @@ const ContactForm = () => {
                     type="text"
                     placeholder="Phone No."
                     value={contact}
-                    onChange={handleContactChange}
-                  />
+                    onChange={handleContactChange} />
                 </div>
                 {/* <div className="mb-3">
-                  <input
-                    className="form-control custom-input"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                  />
-                </div> */}
+              <input
+                className="form-control custom-input"
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </div> */}
                 {checkValid && <p className="error">{checkValid}</p>}
                 <div className="btn-container">
                   <button type="submit" className="btn btn-primary">
@@ -118,7 +116,7 @@ const ContactForm = () => {
           </div>
         </>
       )}
-    </div>
+    </div><Footer /></>
   );
 };
 

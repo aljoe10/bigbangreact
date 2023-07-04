@@ -3,7 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+//import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import './login.css';
 
 export const Login = () => {
@@ -11,7 +11,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword] = useState(false);  //setShowPassword
   const usenavigate = useNavigate();
 
   useEffect(() => {
@@ -41,21 +41,21 @@ export const Login = () => {
     return isValid;
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
 
-    if (validate()) {
-      if (username === "Alvin") {
-        if (password === "123") {
-          usenavigate("/highlight");
-        } else {
-          window.alert("Incorrect password");
-        }
-      } else {
-        window.alert("Incorrect Username");
-      }
-    }
-  };
+  //   if (validate()) {
+  //     if (username === "Alvin") {
+  //       if (password === "123") {
+  //         usenavigate("/highlight");
+  //       } else {
+  //         window.alert("Incorrect password");
+  //       }
+  //     } else {
+  //       window.alert("Incorrect Username");
+  //     }
+  //   }
+  // };
 
   const handleLoginUsingAPI = (e) => {
     e.preventDefault();
@@ -106,9 +106,9 @@ export const Login = () => {
     }
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword((prevShowPassword) => !prevShowPassword);
+  // };
 
   return (
     <div id = "background">
@@ -141,9 +141,9 @@ export const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     className="form-control"
                   />
-                  <span className="input-group-text" onClick={togglePasswordVisibility}>
+                  {/* <span className="input-group-text" onClick={togglePasswordVisibility}>
                     {showPassword ? <BsEyeSlashFill /> : <BsEyeFill />}
-                  </span>
+                  </span> */}
                 </div>
                 {passwordError && <div className="text-danger">{passwordError}</div>}
               </div>
@@ -153,9 +153,9 @@ export const Login = () => {
                 <button type="submit" className="btn btn-primary">
                   Login
                 </button>
-                <div className="mt-2">
-                <span>Create New Account? </span>
-                <Link className="btn btn-success mt-2" to={"/register"}>
+                <div className="mt-4" id="reg">
+                <span>Create New Account? </span> 
+                <Link className="btn btn-success mt-2" to={"/register"} style = {{width: '25%'}}>
                   Register
                 </Link>
                 </div>

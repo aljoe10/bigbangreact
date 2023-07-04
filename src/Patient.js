@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import Footer from "./Footer";
 
 function Patient() {
+  const navigate = useNavigate();
   const [p, setP] = useState([]);
   const [setDeleteMessage] = useState("");
   const [addData, setAddData] = useState({
@@ -113,234 +118,256 @@ function Patient() {
       });
   };
 
+  const handleLogout = () => {
+    // Clear token from local storage
+    localStorage.removeItem('token');
+    // Redirect to the login page
+    navigate('/login');
+  };
+
   return (
-    <div className="Student-container">
-      <h2 className="header" style={{ textAlign: "center" }}>
-        Patient Records
-      </h2>
-      <table className="Student-table">
-        <thead>
-          <tr>
-            <th>patientid</th>
-            <th>pname</th>
-            <th>gender</th>
-            <th>dateofbirth</th>
-            <th>email</th>
-            <th>phonenumber</th>
-            <th>bloodtype</th>
-          </tr>
-        </thead>
-        <tbody>
-          {p.map((pdata) => (
-            <tr key={pdata.patientid}>
-              <td>{pdata.patientid}</td>
-              <td>{pdata.pname}</td>
-              <td>{pdata.gender}</td>
-              <td>{pdata.dateOfBirth}</td>
-              <td>{pdata.email}</td>
-              <td>{pdata.phoneNumber}</td>
-              <td>{pdata.bloodType}</td>
-              <td>
-                <button
-                  type="button"
-                  className="edit-button"
-                  onClick={() => editPatients(pdata.patientid)}
-                  style={{
-                    backgroundColor: "blue",
-                    color: "white",
-                    width: "80px",
-                    marginRight: "5px",
-                  }}
-                >
-                  Edit
-                </button>
-                <button
-                  type="button"
-                  className="delete-button"
-                  onClick={() => deletePatients(pdata.patientid)}
-                  style={{
-                    backgroundColor: "red",
-                    color: "white",
-                    width: "80px",
-                  }}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div
-        className="add-form"
-        style={{
-          marginTop: "20px",
-          padding: "10px",
-          border: "1px solid #ccc",
-          display: showCreateForm ? "block" : "none", // Conditionally display the form
-        }}
-      >
-        <h4>Create Patient Appointment</h4>
-        <div className="form-group">
-          <label htmlFor="pname">pname:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="pname"
-            name="pname"
-            value={addData.pname}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="gender">gender:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="gender"
-            name="gender"
-            value={addData.gender}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="dateOfBirth">dateofbirth:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="dateOfBirth"
-            name="dateOfBirth"
-            value={addData.dateOfBirth}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">email:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="email"
-            name="email"
-            value={addData.email}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">phone number:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="phoneNumber"
-            name="phoneNumber"
-            value={addData.phoneNumber}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="bloodType">bloodtype:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="bloodType"
-            name="bloodType"
-            value={addData.bloodType}
-            onChange={handleAddInputChange}
-          />
-        </div>
-        <button type="button" className="btn btn-primary" onClick={handleAdd}>
-          Add Data
+    <><nav
+      className={`navbar navbar-expand-lg navbar-dark bg-dark`}
+      style={{
+        boxShadow: "0px 5px 4px rgba(0, 0, 0, 0.4)",
+      }}
+    >
+      <div className="container">
+        <a className="navbar-brand" href="/">Aljo's Hospital</a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
-        {addMessage && (
-          <div className="alert alert-success mt-2" role="alert">
-            {addMessage}
-          </div>
-        )}
+        <div className="collapse navbar-collapse" id="navbarNav">
+        </div>
+        <button className="btn btn-link nav-link" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
-      {editData.patientid && (
+    </nav><div className="Student-container">
+        <h2 className="header" style={{ textAlign: "center" }}>
+          Patient Records
+        </h2>
+        <table className="Student-table">
+          <thead>
+            <tr>
+              <th>patientid</th>
+              <th>pname</th>
+              <th>gender</th>
+              <th>dateofbirth</th>
+              <th>email</th>
+              <th>phonenumber</th>
+              <th>bloodtype</th>
+            </tr>
+          </thead>
+          <tbody>
+            {p.map((pdata) => (
+              <tr key={pdata.patientid}>
+                <td>{pdata.patientid}</td>
+                <td>{pdata.pname}</td>
+                <td>{pdata.gender}</td>
+                <td>{pdata.dateOfBirth}</td>
+                <td>{pdata.email}</td>
+                <td>{pdata.phoneNumber}</td>
+                <td>{pdata.bloodType}</td>
+                <td>
+                  <button
+                    type="button"
+                    className="edit-button"
+                    onClick={() => editPatients(pdata.patientid)}
+                    style={{
+                      backgroundColor: "blue",
+                      color: "white",
+                      width: "80px",
+                      marginRight: "5px",
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    className="delete-button"
+                    onClick={() => deletePatients(pdata.patientid)}
+                    style={{
+                      backgroundColor: "red",
+                      color: "white",
+                      width: "80px",
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         <div
-          className="edit-form"
+          className="add-form"
           style={{
             marginTop: "20px",
             padding: "10px",
             border: "1px solid #ccc",
+            display: showCreateForm ? "block" : "none", // Conditionally display the form
           }}
         >
-          <h4>Edit Patient Appointment Details</h4>
+          <h4>Create Patient Appointment</h4>
           <div className="form-group">
-            <label htmlFor="edit-pname">pname:</label>
+            <label htmlFor="pname">pname:</label>
             <input
               type="text"
               className="form-control"
-              id="edit-pname"
+              id="pname"
               name="pname"
-              value={editData.pname}
-              onChange={handleEditInputChange}
-            />
+              value={addData.pname}
+              onChange={handleAddInputChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="edit-gender">gender:</label>
+            <label htmlFor="gender">gender:</label>
             <input
               type="text"
               className="form-control"
-              id="edit-gender"
+              id="gender"
               name="gender"
-              value={editData.gender}
-              onChange={handleEditInputChange}
-            />
+              value={addData.gender}
+              onChange={handleAddInputChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="edit-email">email:</label>
+            <label htmlFor="dateOfBirth">dateofbirth:</label>
             <input
               type="text"
               className="form-control"
-              id="edit-email"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              value={addData.dateOfBirth}
+              onChange={handleAddInputChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">email:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="email"
               name="email"
-              value={editData.email}
-              onChange={handleEditInputChange}
-            />
+              value={addData.email}
+              onChange={handleAddInputChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="edit-phonenumber">phonenumber:</label>
+            <label htmlFor="phoneNumber">phone number:</label>
             <input
               type="text"
               className="form-control"
-              id="edit-phonenumber"
-              name="phonenumber"
-              value={editData.phoneNumber}
-              onChange={handleEditInputChange}
-            />
+              id="phoneNumber"
+              name="phoneNumber"
+              value={addData.phoneNumber}
+              onChange={handleAddInputChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="edit-bloodType">bloodtype:</label>
+            <label htmlFor="bloodType">bloodtype:</label>
             <input
               type="text"
               className="form-control"
-              id="edit-bloodType"
+              id="bloodType"
               name="bloodType"
-              value={editData.bloodType}
-              onChange={handleEditInputChange}
-            />
+              value={addData.bloodType}
+              onChange={handleAddInputChange} />
           </div>
-          <button type="button" className="btn btn-primary" onClick={saveEdit}>
-            Save Changes
+          <button type="button" className="btn btn-primary" onClick={handleAdd}>
+            Add Data
           </button>
-          <div
-            className="alert alert-success mt-2"
-            role="alert"
-            style={{ display: disp }}
-          >
-            Data has been changed successfully!
-          </div>
+          {addMessage && (
+            <div className="alert alert-success mt-2" role="alert">
+              {addMessage}
+            </div>
+          )}
         </div>
-      )}
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => setShowCreateForm(!showCreateForm)} // Toggle the display of the form
-      >
-        Create
-      </button>
-    </div>
+        {editData.patientid && (
+          <div
+            className="edit-form"
+            style={{
+              marginTop: "20px",
+              padding: "10px",
+              border: "1px solid #ccc",
+            }}
+          >
+            <h4>Edit Patient Appointment Details</h4>
+            <div className="form-group">
+              <label htmlFor="edit-pname">pname:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="edit-pname"
+                name="pname"
+                value={editData.pname}
+                onChange={handleEditInputChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="edit-gender">gender:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="edit-gender"
+                name="gender"
+                value={editData.gender}
+                onChange={handleEditInputChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="edit-email">email:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="edit-email"
+                name="email"
+                value={editData.email}
+                onChange={handleEditInputChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="edit-phonenumber">phonenumber:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="edit-phonenumber"
+                name="phonenumber"
+                value={editData.phoneNumber}
+                onChange={handleEditInputChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="edit-bloodType">bloodtype:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="edit-bloodType"
+                name="bloodType"
+                value={editData.bloodType}
+                onChange={handleEditInputChange} />
+            </div>
+            <button type="button" className="btn btn-primary" onClick={saveEdit}>
+              Save Changes
+            </button>
+            <div
+              className="alert alert-success mt-2"
+              role="alert"
+              style={{ display: disp }}
+            >
+              Data has been changed successfully!
+            </div>
+          </div>
+        )}
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setShowCreateForm(!showCreateForm)} // Toggle the display of the form
+        >
+          Create
+        </button>
+        <Footer/>
+      </div></>
   );
 }
 

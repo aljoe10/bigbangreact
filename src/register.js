@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BsEye, BsEyeSlash } from 'react-icons/bs';
+//import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import './register.css';
 
 export const Register = () => {
@@ -11,7 +11,7 @@ export const Register = () => {
   const [usernameError, setUsernameError] = useState('');
   const [useremailError, setUseremailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [passwordVisible] = useState(false); //setPasswordVisible
 
   const navigate = useNavigate();
 
@@ -79,9 +79,9 @@ export const Register = () => {
     }
   };
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setPasswordVisible(!passwordVisible);
+  // };
 
   return (
     <div id = "backgroundReg">
@@ -130,7 +130,7 @@ export const Register = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     className="form-control"
                   />
-                  {passwordVisible ? (
+                  {/* {passwordVisible ? (
                     <BsEyeSlash
                       className="password-toggle-icon"
                       onClick={togglePasswordVisibility}
@@ -140,7 +140,7 @@ export const Register = () => {
                       className="password-toggle-icon"
                       onClick={togglePasswordVisibility}
                     />
-                  )}
+                  )} */}
                 </div>
                 {passwordError && (
                   <div className="text-danger">{passwordError}</div>

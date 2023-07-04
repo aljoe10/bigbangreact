@@ -8,6 +8,8 @@ import card1 from './assests/img/card1.png';
 import card2 from './assests/img/card2.png';
 import card3 from './assests/img/card3.png';
 import card4 from './assests/img/card4.png';
+import Footer from './Footer';
+
 
 const Home = () => {
   const additionalCards = [
@@ -101,6 +103,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };
