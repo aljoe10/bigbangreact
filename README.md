@@ -1,70 +1,17 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot (60)](https://github.com/aljoe10/bigbangreact/assets/129954904/5391fa5a-2491-4f33-8955-87897a91e763)
+![Screenshot (61)](https://github.com/aljoe10/bigbangreact/assets/129954904/4ba615de-030b-4e76-9deb-dfa2ded48cc9)
+![Screenshot (62)](https://github.com/aljoe10/bigbangreact/assets/129954904/576241f7-7bb1-479b-a466-0cf3efc1505b)
+![Screenshot (63)](https://github.com/aljoe10/bigbangreact/assets/129954904/700404a7-1fab-4537-b7d1-8ad09640cd90)
+![Screenshot (64)](https://github.com/aljoe10/bigbangreact/assets/129954904/15284552-9182-4857-b214-d9e073d8f3ff)
+![Screenshot (65)](https://github.com/aljoe10/bigbangreact/assets/129954904/2b49d47d-81e7-44be-86ba-2db4444bfb8e)
+![Screenshot (66)](https://github.com/aljoe10/bigbangreact/assets/129954904/52d296e5-31fb-4b4e-a008-8fdd587ce93f)
+![Screenshot (67)](https://github.com/aljoe10/bigbangreact/assets/129954904/08539e16-70f0-4862-911c-8b3b67a8cb99)
+![Screenshot (68)](https://github.com/aljoe10/bigbangreact/assets/129954904/99c1a479-6fdd-4452-ab7e-988ab6bf36a4)
+![Screenshot (69)](https://github.com/aljoe10/bigbangreact/assets/129954904/f70950dd-6478-46d3-8dce-a34594628623)
+![Screenshot (70)](https://github.com/aljoe10/bigbangreact/assets/129954904/c3d75683-dbb7-45fe-932e-b70b037a57a0)
+![Screenshot (71)](https://github.com/aljoe10/bigbangreact/assets/129954904/376ff3dc-8ff3-4cf1-b246-5d0728ba0996)
+![Screenshot (72)](https://github.com/aljoe10/bigbangreact/assets/129954904/e16438e7-ca29-4bd9-80dc-aa180852a0d2)
+![Screenshot (73)](https://github.com/aljoe10/bigbangreact/assets/129954904/db382f2f-0e64-46bb-bfd7-59296b2ec918)
+![Screenshot (74)](https://github.com/aljoe10/bigbangreact/assets/129954904/a8f1db98-e93d-4fe7-a3a4-92ae28b61b15)
+![Screenshot (75)](https://github.com/aljoe10/bigbangreact/assets/129954904/75b794ef-3179-4451-9fce-c75320caa8ef)
+![Screenshot (76)](https://github.com/aljoe10/bigbangreact/assets/129954904/ea65f1c4-ad89-410c-ba82-45f4e77c24c2)
