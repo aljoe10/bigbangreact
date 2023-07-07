@@ -14,7 +14,7 @@ namespace TheBigBang2.Controllers
     public class DoctorsController : ControllerBase
     {
         private readonly HospitalDbContext _context;
-
+    
         public DoctorsController(HospitalDbContext context)
         {
             _context = context;

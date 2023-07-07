@@ -41,22 +41,6 @@ export const Login = () => {
     return isValid;
   };
 
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-
-  //   if (validate()) {
-  //     if (username === "Alvin") {
-  //       if (password === "123") {
-  //         usenavigate("/highlight");
-  //       } else {
-  //         window.alert("Incorrect password");
-  //       }
-  //     } else {
-  //       window.alert("Incorrect Username");
-  //     }
-  //   }
-  // };
-
   const handleLoginUsingAPI = (e) => {
     e.preventDefault();
 
@@ -88,8 +72,6 @@ export const Login = () => {
               decodedToken[
                 "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
               ];
-            // console.log(role); 
-            // usenavigate("/highlight");
 
             if (role === "Admin") {
               usenavigate("/Admin");
@@ -155,7 +137,7 @@ export const Login = () => {
                 </button>
                 <div className="mt-4" id="reg">
                 <span>Create New Account? </span> 
-                <Link className="btn btn-success mt-2" to={"/register"} style = {{width: '25%'}}>
+                <Link className="btn btn-success mt-2" to={"/register"}>
                   Register
                 </Link>
                 </div>
